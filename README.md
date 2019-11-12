@@ -69,13 +69,13 @@ Let's take a look at the routes we already have in place and use our paths to ac
 
 ## Updating Data in an API
 
-We can see that we have some data in our API already. Let's say we want to change the name of the to do list. I would most likely want to **update** the status of that item to be complete. Let's create and update route using a `PUT` request.
+We can see that we have some data in our API already. Let's say we want to change the name of the to do list. I would most likely want to **update** the status of that item to be complete. Let's create and update route using a `PUT` request and then test it in Postman!
 
 ```js
 app.put("/list/:id", function (req, res) {
-  List.findByIdAndUpdate(
-    req.params.id,
-    { $set: { name: req.body } },
+  List.findOneAndUpdate(
+    { _id: req.params.id },
+    req.body,
     { new: true }
   ).then(list => {
     res.json(list)
@@ -91,7 +91,22 @@ A more likely scenario would be to update the status of a to do list item to `Co
 
 ## Deleting Data in an API
 
-Finally, we will want to **delete** a piece of data. 
+Finally, we will want to write a route that will help us to **delete** a piece of data.
+
+```js
+app.delete("/list/:id", function (req, res) {
+  List.findOneAndRemove({ _id: req.params.id })
+    .then(list => {
+      console.log(list)
+    })
+})
+```
+
+Or similarly to waht we just did with udpate, delete a single to do list item:
+
+```js
+// Enter code here
+```
 
 ## [License](LICENSE)
 
