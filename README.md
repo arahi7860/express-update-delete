@@ -92,11 +92,11 @@ Then, simply add your update to the body and submit!
 
 ![Postman Data](./assets/postman-data.png)
 
-A more likely scenario would be to update the status of a to do list item to `Completed` once we are able to check it off our list!
+<!-- A more likely scenario would be to update the status of a to do list item to `Completed` once we are able to check it off our list!
 
 ```js
 // Enter code here
-```
+``` -->
 
 ## Deleting Data in an API
 
@@ -111,11 +111,11 @@ app.delete("/list/:id", function (req, res) {
 })
 ```
 
-Or similarly to what we just did with udpate, delete a single to do list item:
+<!-- Or similarly to what we just did with udpate, delete a single to do list item:
 
 ```js
 // Enter code here
-```
+``` -->
 
 ## Closing
 
