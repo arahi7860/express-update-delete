@@ -17,15 +17,51 @@ By the end of this, developers should be able to:
 - Define an update route in an Express API
 - Define an delete route in an Express API
 
-## Leading Topic Heading
+## Introduction
 
-Here is where the talk begins. If you have not already included framing above,
-it's appropriate to put it here. Link to introductory articles or documentation.
-Motivate the next section.
+So far, we have learned how to read and create data in our APIs. Next, we want to add some routes in order to incorporate the functionality to update and delete our data. Before we do that, let's review.
 
-Demos, exercises, and labs are labelled as such, followed by a colon and a
-description of the activity starting with an
-[imperative verb](https://en.wikipedia.org/wiki/Imperative_mood).
+### Getting Started
+
+1. Clone [this repo](https://git.generalassemb.ly/dc-wdi-node-express/express-create-read/tree/solution) into your sandbox.
+1. Change into the new directory and run the command `git checkout solution`.
+1. Run the command `nodemon index.js` to start your server.
+1. Navigate to `http://localhost:3000`.
+
+### Review: Resourceful Routing
+
+We've gone over this table of the [Golden
+Seven](https://restfulrouting.com/#golden-seven) named routes in REST a few times now:
+
+| URL | Path | Method  | Action | Description |
+| --- | --- | --- | --- | --- |
+| `/resource` | `/` | `GET` | #index | List all items of `resource` |
+| `/resource/new` | `/new` | `GET` | #new | Render form to create a new instance of `resource` |
+| `/resource` | `/` | `POST` | #create | Create new `resource` in the database |
+| `/resource/1` | `/:id` | `GET` | #show | Show a single `resource` |
+| `/resource/1/edit` | `/:id/edit` | `GET` | #edit | Render form to update a single `resource` |
+| `/resource/1` | `/:id` | `PATCH`/`PUT` | #update | Update `resource` in the database |
+| `/resource/1` | `/:id` | `DELETE` | #destroy | Delete a `resource` |
+
+Based on the descriptions, which of these routes are related to updating data?
+And which are related to deleting data? When we update and delete, are we affeting a single resource or the entire resource as a whole?
+
+<details>
+<summary>Solution</summary>
+
+**Update:**
+
+| URL | Path | Method  | Action | Description |
+| --- | --- | --- | --- | --- |
+| `/resource/1` | `/:id` | `PATCH`/`PUT` | #update | Update `resource` in the database |
+
+**Delete:**
+
+| URL | Path | Method  | Action | Description |
+| --- | --- | --- | --- | --- |
+| `/resource/1` | `/:id` | `DELETE` | #destroy | Delete a `resource` |
+
+</details>
 
 ## [License](LICENSE)
 
