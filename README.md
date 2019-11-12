@@ -106,16 +106,20 @@ Finally, we will want to write a route that will help us to **delete** a piece o
 app.delete("/list/:id", function (req, res) {
   List.findOneAndRemove({ _id: req.params.id })
     .then(list => {
-      console.log(list)
+      res.json(list)
     })
 })
 ```
 
-Or similarly to waht we just did with udpate, delete a single to do list item:
+Or similarly to what we just did with udpate, delete a single to do list item:
 
 ```js
 // Enter code here
 ```
+
+## Closing
+
+Look at you! Building a fully functioning API with full CRUD and RESTful routing! Amazing! We've mentioned this before, but these are the patterns you will need to follow when developing your very own API. You've now built out an Express back end, and you are one step closer to putting together your first full stack application!
 
 ## [License](LICENSE)
 
