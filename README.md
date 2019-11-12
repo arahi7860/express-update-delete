@@ -72,6 +72,8 @@ Let's take a look at the routes we already have in place and use our paths to ac
 
 We can see that we have some data in our API already. Let's say we want to change the name of the to do list. I would most likely want to **update** the status of that item to be complete. Let's create and update route using a `PUT` request and then test it in Postman!
 
+What is `req.body` here?
+
 ```js
 app.put("/list/:id", function (req, res) {
   List.findOneAndUpdate(
