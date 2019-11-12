@@ -21,13 +21,6 @@ By the end of this, developers should be able to:
 
 So far, we have learned how to read and create data in our APIs. Next, we want to add some routes in order to incorporate the functionality to update and delete our data. Before we do that, let's review.
 
-### Getting Started
-
-1. Clone [this repo](https://git.generalassemb.ly/dc-wdi-node-express/express-create-read/tree/solution) into your sandbox.
-1. Change into the new directory and run the command `git checkout solution`.
-1. Run the command `nodemon index.js` to start your server.
-1. Navigate to `http://localhost:3000`.
-
 ### Review: Resourceful Routing
 
 We've gone over this table of the [Golden
@@ -62,6 +55,43 @@ And which are related to deleting data? When we update and delete, are we affeti
 | `/resource/1` | `/:id` | `DELETE` | #destroy | Delete a `resource` |
 
 </details>
+
+### Getting Started
+
+1. Clone [this repo](https://git.generalassemb.ly/dc-wdi-node-express/express-create-read/tree/solution) into your sandbox.
+1. Change into the new directory and run the command `git checkout solution`.
+1. Run `npm install`.
+1. Run `mongod` to start your MongoDB server.
+1. In a separate tab,d run `nodemon index.js` to start your server.
+1. Navigate to `http://localhost:3000`.
+
+Let's take a look at the routes we already have in place and use our paths to access our lists and details from our API.
+
+## Updating Data in an API
+
+We can see that we have some data in our API already. Let's say we want to change the name of the to do list. I would most likely want to **update** the status of that item to be complete. Let's create and update route using a `PUT` request.
+
+```js
+app.put("/list/:id", function (req, res) {
+  List.findByIdAndUpdate(
+    req.params.id,
+    { $set: { name: req.body } },
+    { new: true }
+  ).then(list => {
+    res.json(list)
+  })
+})
+```
+
+A more likely scenario would be to update the status of a to do list item to `Completed` once we are able to check it off our list!
+
+```js
+// Enter code here
+```
+
+## Deleting Data in an API
+
+Finally, we will want to **delete** a piece of data. 
 
 ## [License](LICENSE)
 
