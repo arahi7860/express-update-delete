@@ -83,6 +83,14 @@ app.put("/list/:id", function (req, res) {
 })
 ```
 
+In Postman, set your Content-Type to application/json under the Headers tab.
+
+![Postman Headers](./assets/postman-headers.png)
+
+Then, simply add your update to the body and submit!
+
+![Postman Data](./assets/postman-data.png)
+
 A more likely scenario would be to update the status of a to do list item to `Completed` once we are able to check it off our list!
 
 ```js
