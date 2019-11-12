@@ -2,7 +2,7 @@
 
 # Express: Update and Delete
 
-This lesson will cover the two final functionalities of your API: updating and deleting data.
+This lesson will cover the two final functionalities of your API and the remaining parts of CRUD: updating and deleting data.
 
 ## Prerequisites
 
@@ -62,7 +62,8 @@ And which are related to deleting data? When we update and delete, are we affeti
 1. Change into the new directory and run the command `git checkout solution`.
 1. Run `npm install`.
 1. Run `mongod` to start your MongoDB server.
-1. In a separate tab,d run `nodemon index.js` to start your server.
+1. In a separate tab, run `node db/seed.js` to seed your data to your local database.
+1. In a separate tab, run `nodemon index.js` to start your server.
 1. Navigate to `http://localhost:3000`.
 
 Let's take a look at the routes we already have in place and use our paths to access our lists and details from our API.
