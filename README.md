@@ -100,7 +100,7 @@ A more likely scenario would be to update the status of a to do list item to `Co
 
 ## Deleting Data in an API
 
-Finally, we will want to write a route that will help us to **delete** a piece of data.
+Finally, we will want to write a route that will help us to **delete** a piece of data. You will want to set up Postman in the same with, setting the Content-Type to application/json.
 
 ```js
 app.delete("/list/:id", function (req, res) {
