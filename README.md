@@ -58,7 +58,7 @@ And which are related to deleting data? When we update and delete, are we affeti
 
 ### Getting Started
 
-1. Clone [this repo](https://git.generalassemb.ly/dc-wdi-node-express/express-create-read/tree/solution) into your sandbox.
+1. Clone [this repo](https://git.generalassemb.ly/sei-axolotls/express-create-read) into your sandbox.
 1. Change into the new directory and run the command `git checkout solution`.
 1. Run `npm install`.
 1. Run `mongod` to start your MongoDB server.
