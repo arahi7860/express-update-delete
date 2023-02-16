@@ -56,13 +56,7 @@ And which are related to deleting data? When we update and delete, are we affeti
 
 ### Getting Started
 
-1. Clone [this repo](https://git.generalassemb.ly/sei-buffleheads/express-create-read) into your sandbox.
-1. Change into the new directory and run the command `git checkout solution`.
-1. Run `npm install`.
-1. Run `mongod` to start your MongoDB server.
-1. In a separate tab, run `node db/seed.js` to seed your data to your local database.
-1. In a separate tab, run `nodemon index.js` to start your server.
-1. Navigate to `http://localhost:3000`.
+Grab the repo we used for [Create & Read](https://git.generalassemb.ly/sei-noble/express-create-read).
 
 Let's take a look at the routes we already have in place and use our paths to access our lists and details from our API.
 
