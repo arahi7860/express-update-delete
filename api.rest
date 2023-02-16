@@ -1,0 +1,47 @@
+@url = http://localhost:8080
+
+# @name HelloWorld
+GET {{url}}/
+###
+
+# @name GetLists
+GET {{url}}/list
+###
+
+# @name CreateList
+POST {{url}}/list
+Content-Type: application/json
+
+{
+  "name": "Turtles",
+  "items": [
+    {
+      "title": "Snapper"
+    },
+    {
+      "title": "Razorback"
+    },
+    {
+      "title": "Box",
+      "status": true
+    },
+    {
+
+    }
+  ]
+}
+###
+
+# @name CreateListWithBadBody
+POST {{url}}/list
+Content-Type: application/json
+
+{
+  "name": "Some list"
+}
+###
+
+@listId = {{GetLists.response.body.0._id}}
+# @name GetListById
+GET {{url}}/list/{{listId}}
+###
