@@ -45,3 +45,35 @@ Content-Type: application/json
 # @name GetListById
 GET {{url}}/list/{{listId}}
 ###
+
+# @name FailToGetListById
+GET {{url}}/list/this_id_doesnt_exist
+###
+
+# @name DeleteListById
+DELETE {{url}}/list/{{listId}}
+###
+
+# @name FailToGetListToDelete
+DELETE {{url}}/list/this_id_doesnt_exist
+###
+
+@animalListId = {{GetLists.response.body.2._id}}
+
+# @name UpdateFirstList
+PATCH {{url}}/list/{{animalListId}}
+Content-Type: application/json
+
+{
+  "name": "Seahorses",
+  "items": [
+    {
+      "title": "Randy"
+    },
+    { "title": "Flatface" },
+    { "title": "Shortface" },
+    { "title": "Longface" },
+    { "title": "Longface" }
+  ]
+}
+###
